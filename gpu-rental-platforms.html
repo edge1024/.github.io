@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU租赁平台列表</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2d3748;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 12px 24px;
+            background-color: #e2e8f0;
+            border-radius: 8px 8px 0 0;
+            font-weight: bold;
+            cursor: pointer;
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+        .tab.active {
+            background-color: #4a5568;
+            color: white;
+        }
+        .content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .content.active {
+            display: block;
+        }
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .platform-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-header {
+            background-color: #4a5568;
+            color: white;
+            padding: 15px 20px;
+        }
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-body a {
+            color: #4299e1;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+            transition: color 0.2s ease;
+        }
+        .card-body a:hover {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+            .tab {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GPU租赁平台列表</h1>
+            <div class="subtitle">为AI研究、深度学习和高性能计算提供GPU资源</div>
+        </header>
+
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('domestic')">国内平台</div>
+            <div class="tab" onclick="openTab('overseas')">海外平台</div>
+        </div>
+
+        <div id="domestic" class="content active">
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>GPULink</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://gpulink.cc/" target="_blank">https://gpulink.cc/</a>
+                        <p>提供GPU租赁服务，支持深度学习和AI训练。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>BitaHub</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.bitahub.com/" target="_blank">https://www.bitahub.com/</a>
+                        <p>人工智能计算平台，提供GPU资源租赁和开发环境。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>AutoDL</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.autodl.com/" target="_blank">https://www.autodl.com/</a>
+                        <p>专注于深度学习的GPU云平台，支持多种框架和算法。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>GPU Geek</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://gpugeek.com/" target="_blank">https://gpugeek.com/</a>
+                        <p>提供计算资源租赁服务，适合AI研发和模型训练。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>FunHPC</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.funhpc.com/" target="_blank">https://www.funhpc.com/</a>
+                        <p>高性能计算租赁平台，提供GPU算力服务。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Burn Cloud</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.burncloud.com/" target="_blank">https://www.burncloud.com/</a>
+                        <p>云计算平台，提供GPU租赁和相关服务。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>GPU.pro</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.gpu.pro/" target="_blank">https://www.gpu.pro/</a>
+                        <p>专业GPU资源提供商，支持各类计算需求。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>仙宫云</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.xiangongyun.com/" target="_blank">https://www.xiangongyun.com/</a>
+                        <p>提供AI计算和GPU租赁服务的云平台。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Cephalon Cloud</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://cephalon.cloud/aigc" target="_blank">https://cephalon.cloud/aigc</a>
+                        <p>专注于AIGC领域的GPU计算资源提供商。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>彗星云</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.huixingyun.com/" target="_blank">https://www.huixingyun.com/</a>
+                        <p>国内GPU云服务提供商，支持AI和深度学习应用。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="overseas" class="content">
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>DigitalOcean</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.digitalocean.com/" target="_blank">https://www.digitalocean.com/</a>
+                        <p>国际知名云服务提供商，提供GPU计算资源。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>CoreWeave</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://investors.coreweave.com/overview/default.aspx" target="_blank">https://investors.coreweave.com/overview/default.aspx</a>
+                        <p>专业的GPU云计算平台，适合大规模AI训练和推理。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Vast.ai</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://vast.ai/" target="_blank">https://vast.ai/</a>
+                        <p>提供低成本GPU租赁的市场平台，支持点对点租赁。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Baseten</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.baseten.co/" target="_blank">https://www.baseten.co/</a>
+                        <p>专注于ML/AI模型部署和GPU资源提供的平台。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Linode</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.linode.com" target="_blank">https://www.linode.com</a>
+                        <p>提供云计算和GPU实例的服务提供商。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Paperspace</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.paperspace.com" target="_blank">https://www.paperspace.com</a>
+                        <p>面向AI和机器学习的云GPU平台，提供开发环境。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>OVHcloud</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.ovhcloud.com" target="_blank">https://www.ovhcloud.com</a>
+                        <p>欧洲领先的云服务提供商，提供GPU计算服务。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Hetzner</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.hetzner.com" target="_blank">https://www.hetzner.com</a>
+                        <p>提供服务器托管和GPU租赁的德国公司。</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="card-header">
+                        <h3>Hycons.ai</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://www.hycons.ai/cn" target="_blank">https://www.hycons.ai/cn</a>
+                        <p>面向中文用户的国际GPU租赁服务提供商。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>最后更新时间: 2025年4月7日</p>
+        </footer>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            
+            var tabs = document.getElementsByClassName('tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            // Find and activate the corresponding tab
+            var allTabs = document.getElementsByClassName('tab');
+            for (var i = 0; i < allTabs.length; i++) {
+                if (allTabs[i].textContent.includes(tabName === 'domestic' ? '国内' : '海外')) {
+                    allTabs[i].classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
